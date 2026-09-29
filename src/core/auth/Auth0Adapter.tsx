@@ -39,6 +39,9 @@ export const Auth0Adapter: React.FC<{ children: React.ReactNode }> = ({
 					return await getAccessTokenSilently({
 						authorizationParams: {
 							audience: import.meta.env.VITE_AUTH0_AUDIENCE,
+							scope:
+								'openid profile email read:crop write:crop read:sensor write:sensor',
+							cacheMode: import.meta.env.PROD ? 'off' : 'on',
 						},
 					});
 				} catch (e) {
