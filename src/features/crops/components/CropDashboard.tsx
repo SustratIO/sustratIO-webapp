@@ -1,12 +1,12 @@
 import { useCrops } from '@features/crops/api/useCrops';
 import { CropList } from '@features/crops/components/CropList';
 import { useAuthStore } from '@stores/useAuthStore';
+import { Navigate } from '@tanstack/react-router';
 
 export const CropDashboard = () => {
 	const {
 		user,
 		isAuthenticated,
-		login,
 		logout,
 		isLoading: isUserLoading,
 	} = useAuthStore();
@@ -19,16 +19,7 @@ export const CropDashboard = () => {
 	} = useCrops(user?.id);
 
 	if (!isAuthenticated) {
-		return (
-			<button
-				type="button"
-				onClick={() => {
-					void login();
-				}}
-			>
-				Login to see crops
-			</button>
-		);
+		return <Navigate to="/login" replace />;
 	}
 
 	if (isUserLoading) return <p>Loading session...</p>;

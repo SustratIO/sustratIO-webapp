@@ -30,5 +30,19 @@ export default defineConfig([
 				tsconfigRootDir: import.meta.dirname,
 			},
 		},
+		rules: {
+			'no-throw-literal': 'off',
+			'@typescript-eslint/only-throw-error': [
+				'error',
+				{
+					allow: [
+						{
+							from: 'file',
+							name: 'Redirect',
+						},
+					],
+				},
+			],
+		},
 	},
 ]);

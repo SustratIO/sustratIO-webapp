@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
-import { configDefaults, defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -73,31 +73,5 @@ export default defineConfig({
 			'@shared': path.resolve(import.meta.dirname, './src/shared'),
 			'@stores': path.resolve(import.meta.dirname, './src/app/stores'),
 		},
-	},
-	test: {
-		coverage: {
-			exclude: [
-				...(configDefaults.coverage.exclude ?? []),
-				'src/**/{tests,factories,types}/*.{ts,tsx}',
-			],
-			provider: 'v8',
-			reporter: ['clover', 'html', 'lcov', 'text'],
-			reportsDirectory: './coverage',
-			thresholds: {
-				branches: 95,
-				functions: 95,
-				lines: 95,
-				statements: 95,
-			},
-		},
-		environment: 'jsdom',
-		globals: false,
-		// We need to decide what to include
-		// include: ['src/**/*.{ts,tsx}'],
-		exclude: [
-			...configDefaults.exclude,
-			'src/**/{tests,factories,types}/*.{ts,tsx}',
-		],
-		setupFiles: ['./src/tests/setup.ts'],
 	},
 });

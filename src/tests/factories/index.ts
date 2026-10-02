@@ -1,0 +1,1 @@
+export { cropFactory } from './cropFactory';
