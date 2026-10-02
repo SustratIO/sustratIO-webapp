@@ -6,7 +6,7 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"includes": ["**", "!!**/dist", "!!src/routeTree.gen.ts"]
+		"includes": ["**", "!!**/dist", "!!src/app/routeTree.gen.ts"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -15,7 +15,17 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"preset": "recommended"
+			"preset": "recommended",
+			"correctness": {
+				"noUnusedVariables": {
+					"level": "error",
+					"options": {
+						"ignore": {
+							"interface": ["ImportMeta"]
+						}
+					}
+				}
+			}
 		}
 	},
 	"javascript": {

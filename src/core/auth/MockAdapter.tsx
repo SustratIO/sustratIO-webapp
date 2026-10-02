@@ -1,4 +1,4 @@
-import { useAuthStore } from '@app/stores/useAuthStore';
+import { useAuthStore } from '@stores/useAuthStore';
 import type React from 'react';
 import { useEffect } from 'react';
 

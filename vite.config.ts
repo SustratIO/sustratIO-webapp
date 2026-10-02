@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { configDefaults, defineConfig } from 'vitest/config';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -64,9 +64,40 @@ export default defineConfig({
 		alias: {
 			'@': path.resolve(import.meta.dirname, './src'),
 			'@app': path.resolve(import.meta.dirname, './src/app'),
+			'@appComponents': path.resolve(
+				import.meta.dirname,
+				'./src/app/components',
+			),
 			'@core': path.resolve(import.meta.dirname, './src/core'),
-			'@shared': path.resolve(import.meta.dirname, './src/shared'),
 			'@features': path.resolve(import.meta.dirname, './src/features'),
+			'@shared': path.resolve(import.meta.dirname, './src/shared'),
+			'@stores': path.resolve(import.meta.dirname, './src/app/stores'),
 		},
+	},
+	test: {
+		coverage: {
+			exclude: [
+				...(configDefaults.coverage.exclude ?? []),
+				'src/**/{tests,factories,types}/*.{ts,tsx}',
+			],
+			provider: 'v8',
+			reporter: ['clover', 'html', 'lcov', 'text'],
+			reportsDirectory: './coverage',
+			thresholds: {
+				branches: 95,
+				functions: 95,
+				lines: 95,
+				statements: 95,
+			},
+		},
+		environment: 'jsdom',
+		globals: false,
+		// We need to decide what to include
+		// include: ['src/**/*.{ts,tsx}'],
+		exclude: [
+			...configDefaults.exclude,
+			'src/**/{tests,factories,types}/*.{ts,tsx}',
+		],
+		setupFiles: ['./src/tests/setup.ts'],
 	},
 });

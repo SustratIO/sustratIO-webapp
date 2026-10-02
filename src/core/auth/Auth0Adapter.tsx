@@ -1,5 +1,5 @@
-import { useAuthStore } from '@app/stores/useAuthStore';
 import { useAuth0 } from '@auth0/auth0-react';
+import { useAuthStore } from '@stores/useAuthStore';
 import type React from 'react';
 import { useEffect } from 'react';
 

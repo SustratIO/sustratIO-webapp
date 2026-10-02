@@ -1,6 +1,6 @@
-import { useAuthStore } from '@app/stores/useAuthStore';
 import { useCrops } from '@features/crops/api/useCrops';
 import { CropList } from '@features/crops/components/CropList';
+import { useAuthStore } from '@stores/useAuthStore';
 
 export const CropDashboard = () => {
 	const {
@@ -46,12 +46,7 @@ export const CropDashboard = () => {
 			>
 				Logout
 			</button>
-			<CropList
-				items={cropsPage?.items ?? []}
-				onSelect={(cropId) => {
-					console.debug(cropId);
-				}}
-			/>
+			<CropList items={cropsPage?.items ?? []} />
 		</>
 	);
 };
