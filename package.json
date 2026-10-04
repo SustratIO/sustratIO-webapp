@@ -4,13 +4,14 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
 		"build": "tsc -b && vite build",
+		"commit": "cz commit",
+		"dev": "vite",
+		"format": "biome format --write .",
+		"format:ci": "biome format .",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"preview": "vite preview",
-		"format": "biome format --write .",
-		"format:check": "biome format .",
 		"test": "vitest"
 	},
 	"dependencies": {
