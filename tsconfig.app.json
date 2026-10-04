@@ -2,14 +2,9 @@
 	"compilerOptions": {
 		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 		"target": "es2023",
-		"lib": [
-			"ES2023",
-			"DOM"
-		],
+		"lib": ["ES2023", "DOM"],
 		"module": "esnext",
-		"types": [
-			"vite/client"
-		],
+		"types": ["vite/client"],
 		"allowArbitraryExtensions": true,
 		"skipLibCheck": true,
 		/* Bundler mode */
@@ -26,33 +21,15 @@
 		"noFallthroughCasesInSwitch": true,
 		/* Paths */
 		"paths": {
-			"@/*": [
-				"./src/*"
-			],
-			"@app/*": [
-				"./src/app/*"
-			],
-			"@appComponents/*": [
-				"./src/app/components/*"
-			],
-			"@assets/*": [
-				"./src/assets/*"
-			],
-			"@core/*": [
-				"./src/core/*"
-			],
-			"@features/*": [
-				"./src/features/*"
-			],
-			"@shared/*": [
-				"./src/shared/*"
-			],
-			"@stores/*": [
-				"./src/app/stores/*"
-			]
+			"@/*": ["./src/*"],
+			"@app/*": ["./src/app/*"],
+			"@appComponents/*": ["./src/app/components/*"],
+			"@assets/*": ["./src/assets/*"],
+			"@core/*": ["./src/core/*"],
+			"@features/*": ["./src/features/*"],
+			"@shared/*": ["./src/shared/*"],
+			"@stores/*": ["./src/app/stores/*"]
 		}
 	},
-	"include": [
-		"src"
-	]
+	"include": ["src"]
 }
