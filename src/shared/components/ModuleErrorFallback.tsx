@@ -1,6 +1,6 @@
 import type { FallbackProps } from 'react-error-boundary';
 
-interface Props extends FallbackProps {
+interface ModuleErrorFallbackProps extends FallbackProps {
 	moduleName: string;
 }
 
@@ -8,7 +8,7 @@ export const ModuleErrorFallback = ({
 	error,
 	resetErrorBoundary,
 	moduleName,
-}: Props) => {
+}: ModuleErrorFallbackProps) => {
 	const errorMessage =
 		error instanceof Error
 			? error.message

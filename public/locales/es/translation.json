@@ -1,0 +1,49 @@
+{
+	"App": {
+		"Components": {
+			"auth": {
+				"HeaderAuthControls": {
+					"loading": "Cargando usuario...",
+					"login": "Iniciar sesión",
+					"logout": "Cerrar sesión"
+				}
+			}
+		},
+		"Layouts": {
+			"HeaderLayout": {
+				"Nav": {
+					"overview": "General",
+					"crops": "Cultivos"
+				}
+			}
+		}
+	},
+	"Shared": {
+		"Components": {
+			"DataRetrievalError": {
+				"Message": "Ocurrió un error al obtener los datos."
+			}
+		}
+	},
+	"Features": {
+		"overview": {
+			"OverviewPage": {
+				"Title": "Resumen",
+				"Description": "Condiciones actuales y operaciones en {{plantationName}}.",
+				"Buttons": {
+					"Overview": "Resumen",
+					"Data": "Datos",
+					"Permissions": "Permisos",
+					"Alerts": "Alertas"
+				},
+				"Plantation": {
+					"API": {
+						"Loading": "Cargando datos de la plantación...",
+						"NoData": "No hay datos disponibles para esta plantación.",
+						"Error": "Error al cargar los datos de la plantación: {{message}}"
+					}
+				}
+			}
+		}
+	}
+}

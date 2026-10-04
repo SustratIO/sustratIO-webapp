@@ -4,12 +4,7 @@ import { useAuthStore } from '@stores/useAuthStore';
 import { Navigate } from '@tanstack/react-router';
 
 export const CropDashboard = () => {
-	const {
-		user,
-		isAuthenticated,
-		logout,
-		isLoading: isUserLoading,
-	} = useAuthStore();
+	const { user, isAuthenticated, isLoading: isUserLoading } = useAuthStore();
 
 	const {
 		data: cropsPage,
@@ -26,18 +21,5 @@ export const CropDashboard = () => {
 	if (isCropsAPIError) return <p>API Error: {cropAPIError.message}</p>;
 	if (isCropsAPILoading) return <p>Loading crops...</p>;
 
-	return (
-		<>
-			<h1>Welcome, {user?.email}</h1>
-			<button
-				type="button"
-				onClick={() => {
-					void logout();
-				}}
-			>
-				Logout
-			</button>
-			<CropList items={cropsPage?.items ?? []} />
-		</>
-	);
+	return <CropList items={cropsPage?.items ?? []} />;
 };

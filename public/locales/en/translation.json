@@ -1,0 +1,49 @@
+{
+	"App": {
+		"Components": {
+			"auth": {
+				"HeaderAuthControls": {
+					"loading": "Loading user...",
+					"login": "Login",
+					"logout": "Logout"
+				}
+			}
+		},
+		"Layouts": {
+			"HeaderLayout": {
+				"Nav": {
+					"overview": "Overview",
+					"crops": "Crops"
+				}
+			}
+		}
+	},
+	"Shared": {
+		"Components": {
+			"DataRetrievalError": {
+				"Message": "An error occurred while retrieving data."
+			}
+		}
+	},
+	"Features": {
+		"overview": {
+			"components": {
+				"PlantationHeader": {
+					"isLoading": "Loading plantation data...",
+					"NoData": "No data available for this plantation.",
+					"Error": "Error fetching plantation data: {{message}}"
+				}
+			},
+			"OverviewPage": {
+				"Title": "Quick Overview",
+				"Description": "Current conditions and operations across {{plantationName}}.",
+				"Buttons": {
+					"Overview": "Overview",
+					"Data": "Data",
+					"Permissions": "Permissions",
+					"Alerts": "Alerts"
+				}
+			}
+		}
+	}
+}

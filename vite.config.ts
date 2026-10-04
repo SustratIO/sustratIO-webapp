@@ -68,6 +68,7 @@ export default defineConfig({
 				import.meta.dirname,
 				'./src/app/components',
 			),
+			'@assets': path.resolve(import.meta.dirname, './src/assets'),
 			'@core': path.resolve(import.meta.dirname, './src/core'),
 			'@features': path.resolve(import.meta.dirname, './src/features'),
 			'@shared': path.resolve(import.meta.dirname, './src/shared'),

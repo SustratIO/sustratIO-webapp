@@ -1,0 +1,17 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: eslint
+      run: pnpm lint:fix {staged_files}
+      glob:
+        - "*.ts"
+        - "*.tsx"
+        - "*.js"
+
+    - name: biome format
+      run: pnpm format {staged_files}
+      glob:
+        - "*.ts"
+        - "*.tsx"
+        - ".js"
+        - "*.json"
